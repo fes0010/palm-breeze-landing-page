@@ -1784,3 +1784,30 @@ body {
         height: 35px;
     }
 }
+
+/* Logo Text Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+/* Mobile Logo Text */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        display: none; /* Hide text on very small screens to save space */
+    }
+}
