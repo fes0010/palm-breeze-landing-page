@@ -1918,3 +1918,70 @@ body {
         width: 38px;
     }
 }
+
+/* Fix mobile logo text visibility */
+@media (max-width: 768px) {
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+    }
+    
+    .logo-subtext {
+        font-size: 0.5rem;
+        letter-spacing: 1px;
+        margin-top: -3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        display: flex !important; /* Override previous hide */
+        font-size: 0.85rem;
+    }
+    
+    .logo-subtext {
+        font-size: 0.45rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 0.75rem;
+    }
+    
+    .logo-subtext {
+        font-size: 0.4rem;
+    }
+}
+
+/* Ensure logo displays properly on all devices */
+.logo {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+/* Mobile logo adjustments */
+@media (max-width: 768px) {
+    .logo {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        gap: 6px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+}
