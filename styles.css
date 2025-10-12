@@ -1811,3 +1811,80 @@ body {
         display: none; /* Hide text on very small screens to save space */
     }
 }
+
+/* Logo Icon (Palm Tree + WiFi) */
+.logo-icon {
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.navbar.scrolled .logo-icon {
+    height: 42px;
+    width: 42px;
+}
+
+@media (max-width: 768px) {
+    .logo-icon {
+        height: 42px;
+        width: 42px;
+    }
+    
+    .navbar.scrolled .logo-icon {
+        height: 36px;
+        width: 36px;
+    }
+}
+
+/* Logo Subtext - Networks Limited */
+.logo-subtext {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    display: block;
+    margin-top: -5px;
+}
+
+/* Adjust logo text container */
+.logo-text {
+    line-height: 1.2;
+}
+
+/* Mobile adjustments for logo text */
+@media (max-width: 768px) {
+    .logo-subtext {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        display: none;
+    }
+}
+
+/* Update logo icon to show just the palm+wifi part */
+.logo-icon {
+    height: 55px;
+    width: auto;
+    max-width: 60px;
+    object-fit: contain;
+    object-position: left;
+}
+
+.navbar.scrolled .logo-icon {
+    height: 48px;
+}
+
+@media (max-width: 768px) {
+    .logo-icon {
+        height: 48px;
+        max-width: 50px;
+    }
+}
