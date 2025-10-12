@@ -1731,3 +1731,56 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Adjust navbar for logo */
+.navbar {
+    padding: 0.8rem 0;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 0;
+}
+
+.navbar.scrolled .logo-img {
+    height: 40px;
+}
+
+/* Footer Logo */
+.footer-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo {
+    height: 35px;
+    width: auto;
+}
+
+/* Mobile Logo Adjustment */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+    }
+    
+    .navbar.scrolled .logo-img {
+        height: 35px;
+    }
+}

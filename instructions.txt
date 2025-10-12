@@ -1,0 +1,21 @@
+PALM BREEZE LOGO SETUP INSTRUCTIONS
+====================================
+
+1. Save the Palm Breeze logo image as: palm-breeze-logo.png
+   (Place it in the wifi-landing-page directory)
+
+2. The logo is now integrated in:
+   - Navigation bar (top left)
+   - Footer section
+
+3. Logo features:
+   - Responsive sizing (adjusts on scroll)
+   - Hover animation
+   - Mobile optimized
+   - Auto-scales on smaller screens
+
+4. File locations updated:
+   ✓ index.html - Navigation & Footer
+   ✓ styles.css - Logo styling
+
+Ready to view? Just add the logo image!

@@ -1,0 +1,11 @@
+                <div class="footer-section">
+                    <h3>
+                        <img src="palm-breeze-logo.png" alt="Palm Breeze" class="footer-logo">
+                    </h3>
+                    <p>Your trusted partner for fast and reliable home fiber internet in Kenya.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> 0742 22 44 14</p>
+                        <p><i class="fas fa-phone"></i> 020 78 48 390</p>
+                        <p><i class="fas fa-phone"></i> 0753 46 28 40</p>
+                    </div>
+                </div>
