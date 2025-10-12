@@ -1703,3 +1703,31 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+/* Basic Plan Badge */
+.plan-badge.basic {
+    background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+}
+
+/* Update Plans Grid for 5 cards */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1200px) {
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+}
