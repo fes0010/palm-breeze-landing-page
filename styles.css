@@ -1888,3 +1888,33 @@ body {
         max-width: 50px;
     }
 }
+
+/* Palm Breeze Icon - Just the palm+wifi symbol */
+.logo .logo-icon {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo .logo-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.navbar.scrolled .logo .logo-icon {
+    height: 44px;
+    width: 44px;
+}
+
+@media (max-width: 768px) {
+    .logo .logo-icon {
+        height: 44px;
+        width: 44px;
+    }
+    
+    .navbar.scrolled .logo .logo-icon {
+        height: 38px;
+        width: 38px;
+    }
+}
