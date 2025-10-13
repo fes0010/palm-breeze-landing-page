@@ -47,7 +47,7 @@ body {
     background: rgba(10, 14, 39, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 0.7rem 0;
     transition: all 0.3s ease;
     box-shadow: 0 2px 20px rgba(0, 102, 255, 0.1);
 }
@@ -509,7 +509,7 @@ body {
 }
 
 .plan-features li {
-    padding: 0.8rem 0;
+    padding: 0.7rem 0;
     border-bottom: 1px solid #f0f0f0;
 }
 
@@ -1277,7 +1277,7 @@ body {
 }
 
 .plan-features li {
-    padding: 0.6rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid #f0f0f0;
     font-size: 0.9rem;
 }
@@ -1633,7 +1633,7 @@ body {
 
 /* Smooth Scrolling Enhancement */
 html {
-    scroll-padding-top: 80px;
+    scroll-padding-top: 110px;
 }
 
 /* Performance Optimization */
@@ -1751,7 +1751,7 @@ body {
 
 /* Adjust navbar for logo */
 .navbar {
-    padding: 0.8rem 0;
+    padding: 0.7rem 0;
 }
 
 .navbar.scrolled {
@@ -1814,8 +1814,9 @@ body {
 
 /* Logo Icon (Palm Tree + WiFi) */
 .logo-icon {
-    height: 50px;
-    width: 50px;
+    height: 90px;
+    width: auto;
+    max-width: 200px;
     transition: transform 0.3s ease;
 }
 
@@ -1824,19 +1825,22 @@ body {
 }
 
 .navbar.scrolled .logo-icon {
-    height: 42px;
-    width: 42px;
+    height: 80px;
+    width: auto;
+    max-width: 180px;
 }
 
 @media (max-width: 768px) {
     .logo-icon {
-        height: 42px;
-        width: 42px;
+        height: 75px;
+        width: auto;
+        max-width: 160px;
     }
-    
+
     .navbar.scrolled .logo-icon {
-        height: 36px;
-        width: 36px;
+        height: 70px;
+        width: auto;
+        max-width: 150px;
     }
 }
 
@@ -1871,28 +1875,30 @@ body {
 
 /* Update logo icon to show just the palm+wifi part */
 .logo-icon {
-    height: 55px;
+    height: 100px;
     width: auto;
-    max-width: 60px;
+    max-width: 250px;
     object-fit: contain;
     object-position: left;
 }
 
 .navbar.scrolled .logo-icon {
-    height: 48px;
+    height: 90px;
+    max-width: 220px;
 }
 
 @media (max-width: 768px) {
     .logo-icon {
-        height: 48px;
-        max-width: 50px;
+        height: 80px;
+        max-width: 200px;
     }
 }
 
 /* Palm Breeze Icon - Just the palm+wifi symbol */
 .logo .logo-icon {
-    height: 50px;
-    width: 50px;
+    height: 110px;
+    width: auto;
+    max-width: 300px;
     object-fit: contain;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -1903,19 +1909,22 @@ body {
 }
 
 .navbar.scrolled .logo .logo-icon {
-    height: 44px;
-    width: 44px;
+    height: 100px;
+    width: auto;
+    max-width: 270px;
 }
 
 @media (max-width: 768px) {
     .logo .logo-icon {
-        height: 44px;
-        width: 44px;
+        height: 90px;
+        width: auto;
+        max-width: 240px;
     }
-    
+
     .navbar.scrolled .logo .logo-icon {
-        height: 38px;
-        width: 38px;
+        height: 85px;
+        width: auto;
+        max-width: 220px;
     }
 }
 
