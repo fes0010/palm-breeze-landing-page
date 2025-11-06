@@ -47,7 +47,7 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
     <!-- Navigation -->
@@ -458,19 +458,19 @@
                         <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="callbackForm" name="callbackForm" onsubmit="return handleFormSubmit(event)">
                     <h3>Request a Callback</h3>
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Phone Number" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required autocomplete="tel" pattern="[0-9]{10,13}">
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email Address">
+                        <input type="email" id="email" name="email" placeholder="Email Address" autocomplete="email">
                     </div>
                     <div class="form-group">
-                        <select required>
+                        <select id="plan" name="plan" required>
                             <option value="">Select a Plan</option>
                             <option value="basic">Basic - KSh 1500 (7 Mbps)</option>
                             <option value="budget">Budget - KSh 2000 (14 Mbps)</option>
@@ -480,8 +480,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea rows="4" placeholder="Additional Information (Optional)"></textarea>
+                        <textarea id="message" name="message" rows="4" placeholder="Additional Information (Optional)" maxlength="500"></textarea>
                     </div>
+                    <!-- Honeypot field for bot detection -->
+                    <input type="text" name="website" id="website" style="display:none" tabindex="-1" autocomplete="off">
                     <button type="submit" class="btn btn-primary">Request Callback</button>
                 </form>
             </div>

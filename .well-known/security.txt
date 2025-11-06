@@ -1,0 +1,10 @@
+Contact: mailto:security@palmbreeze.co.ke
+Contact: tel:+254742224414
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://www.palmbreezenetworks.net/.well-known/security.txt
+Policy: https://www.palmbreezenetworks.net/security-policy
+
+# Security reporting for Palm Breeze Networks Limited
+# We take security seriously and appreciate responsible disclosure.
+# Please report any security vulnerabilities to the contact above.

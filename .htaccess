@@ -34,7 +34,35 @@ RewriteRule ^(.*)$ https://www.palmbreezenetworks.net/$1 [R=301,L]
 
 # Security Headers
 <IfModule mod_headers.c>
+    # Prevent MIME type sniffing
     Header set X-Content-Type-Options "nosniff"
+    
+    # Prevent clickjacking
     Header set X-Frame-Options "SAMEORIGIN"
+    
+    # XSS Protection
     Header set X-XSS-Protection "1; mode=block"
+    
+    # HTTP Strict Transport Security (HSTS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Content Security Policy
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self';"
 </IfModule>
+
+# Block access to .git directory and other sensitive files
+<FilesMatch "^\.git">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(env|log|ini|sh|sql|bak|conf)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

@@ -121,21 +121,66 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
-// Form submission
+// Form submission handler with security checks
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    // Get form element
+    const form = event.target;
+    
+    // Honeypot check - if website field is filled, it's a bot
+    const honeypot = form.querySelector('#website');
+    if (honeypot && honeypot.value !== '') {
+        console.log('Bot detected');
+        return false;
+    }
+    
+    // Get form data
+    const formData = {
+        name: form.querySelector('#name').value,
+        phone: form.querySelector('#phone').value,
+        email: form.querySelector('#email').value || 'Not provided',
+        plan: form.querySelector('#plan').value,
+        message: form.querySelector('#message').value || 'None',
+        timestamp: new Date().toISOString()
+    };
+    
+    // Basic validation
+    if (!formData.name || !formData.phone || !formData.plan) {
+        alert('Please fill in all required fields.');
+        return false;
+    }
+    
+    // Phone validation
+    const phonePattern = /^[0-9]{10,13}$/;
+    if (!phonePattern.test(formData.phone.replace(/[\s-]/g, ''))) {
+        alert('Please enter a valid phone number.');
+        return false;
+    }
+    
+    // In production, send this data to your backend
+    console.log('Form data:', formData);
+    
+    // For now, create a WhatsApp message
+    const whatsappMessage = `Hi! I'm interested in Palm Breeze Internet.%0A%0AName: ${formData.name}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0APlan: ${formData.plan}%0AMessage: ${formData.message}`;
+    const whatsappURL = `https://wa.me/254742224414?text=${whatsappMessage}`;
+    
+    // Show success message
+    alert('Thank you for your interest! Redirecting you to WhatsApp to complete your request.');
+    
+    // Redirect to WhatsApp
+    window.open(whatsappURL, '_blank');
+    
+    // Reset form
+    form.reset();
+    
+    return false;
+}
+
+// Legacy form handler for compatibility
 const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        
-        // Show success message (you can replace this with actual form submission)
-        alert('Thank you for your message! We will get back to you soon.');
-        
-        // Reset form
-        contactForm.reset();
-    });
+if (contactForm && !contactForm.getAttribute('onsubmit')) {
+    contactForm.addEventListener('submit', handleFormSubmit);
 }
 
 // Newsletter form submission
