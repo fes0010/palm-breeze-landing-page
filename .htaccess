@@ -57,12 +57,46 @@ RewriteRule ^(.*)$ https://www.palmbreezenetworks.net/$1 [R=301,L]
 </IfModule>
 
 # Block access to .git directory and other sensitive files
-<FilesMatch "^\.git">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
+# Compatible with Apache 2.2 and 2.4
+<IfModule mod_version.c>
+    <IfVersion >= 2.4>
+        # Apache 2.4+
+        <DirectoryMatch "^\.git">
+            Require all denied
+        </DirectoryMatch>
+        <FilesMatch "^\.git">
+            Require all denied
+        </FilesMatch>
+        <FilesMatch "\.(env|log|ini|sh|sql|bak|conf|md)$">
+            Require all denied
+        </FilesMatch>
+    </IfVersion>
+    <IfVersion < 2.4>
+        # Apache 2.2
+        <DirectoryMatch "^\.git">
+            Order allow,deny
+            Deny from all
+        </DirectoryMatch>
+        <FilesMatch "^\.git">
+            Order allow,deny
+            Deny from all
+        </FilesMatch>
+        <FilesMatch "\.(env|log|ini|sh|sql|bak|conf|md)$">
+            Order allow,deny
+            Deny from all
+        </FilesMatch>
+    </IfVersion>
+</IfModule>
 
-<FilesMatch "\.(env|log|ini|sh|sql|bak|conf)$">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
+# Fallback if mod_version not available (Apache 2.4 syntax)
+<IfModule !mod_version.c>
+    <DirectoryMatch "^\.git">
+        Require all denied
+    </DirectoryMatch>
+    <FilesMatch "^\.git">
+        Require all denied
+    </FilesMatch>
+    <FilesMatch "\.(env|log|ini|sh|sql|bak|conf|md)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>

@@ -1,0 +1,28 @@
+# Version Control
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md
+
+# Scripts
+deploy.sh
+save-new-flyer.sh
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+*.old
+*.log
+
+# Development files
+.vscode/
+.idea/
+*.sublime-*
+
+# OS Files
+.DS_Store
+Thumbs.db
